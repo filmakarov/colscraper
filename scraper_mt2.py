@@ -44,6 +44,9 @@ jsonworkers = 4
 # usually 4 is ok, but it you get Connection refused error, try less
 imageworkers = 1
 
+#collection ticker for beauties
+colname = "bga"
+
 #########################################################
 
 #create nested folder
@@ -54,12 +57,12 @@ tokenuris = []
 img_uris = []
 filepaths = []
 
-print ("SCRAPING COLLECTION " + FOLDER)
+print ("SCRAPING COLLECTION " + colname + " TO " + FOLDER)
 
 #create arrays for token uris and file paths
 for i in tqdm(range(START_FROM, COLLECTION_SIZE)):
         tokenuris.append(baseuri + str(i))
-        file_path = FOLDER + "/" + str(i) + EXTENSION
+        file_path = FOLDER + "/" + colname + "-" + str(i) + EXTENSION
         filepaths.append(file_path)
 
 # make imguris
@@ -111,6 +114,6 @@ print ('IMAGE URIS TO DOWNLOAD ' + str(len(img_uris_from_file)))
 # run download threaded
 print ("DOWNLOADING IMAGES...")    
 with cf.ProcessPoolExecutor(max_workers=imageworkers) as executor:
-    list(tqdm(executor.map(urllib.request.urlretrieve, img_uris_from_file, filepaths), total=len(img_uris)))
+    list(tqdm(executor.map(urllib.request.urlretrieve, img_uris_from_file, filepaths), total=len(img_uris_from_file)))
 
 print("--- %s seconds ---" % (time.time() - start_time))

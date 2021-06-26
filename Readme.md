@@ -17,17 +17,17 @@ python3 scraper_mt2.py
 ```
 
 **Setup config**
-1. baseuri. BaseUri is returned by collection contract baseURI() function. Find the contract on Etherscan, Read Contract and choose baseURI() for ERC721 or uri for ERC1155.
-2. collection size. 
+1. Baseuri. BaseUri is returned by collection contract baseURI() function. Find the contract on Etherscan, Read Contract and choose baseURI() for ERC721 or uri for ERC1155.
+2. Collection size. 
 3. Start from. If you are scraping for the first time, set to 0. 
 Set another value if you are continuing after it stopped downloading images only.
 If you've got an error during parsing JSON, start again from 0. 
-4. parse json again or not. set to false only when you've got error during downloading images, so that you've got complete txt file with json uris and you do not want to parse all of them again
-5. file extension for resulting files
-6. folder to store scraped files
-7. multithread workers #. json workers usually ok 2 or 4. imageworkers was 1 on local machine and 2 or 4 on gce instance
+4. Parse json again or not. set to false only when you've got error during downloading images, so that you've got complete txt file with json uris and you do not want to parse all of them again
+5. File extension for resulting files
+6. Folder to store scraped files
+7. Multithread workers #. jsonworkers usually ok 2 or 4. imageworkers was 1 on local machine and 2 or 4 on gce instance
 
-**Image URI Tweaking**
+**Image URI Tweaking**<br>
 Image uris for all the collections differ. 
 For most https:// imageuris everything works fine with just 
 ```.bash
