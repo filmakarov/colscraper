@@ -31,6 +31,9 @@ COLLECTION_SIZE = 20;
 #0 = from beginning
 START_FROM = 0;
 
+# switch to false if you want to continue from previously parsed txt file
+parse_json = True
+
 #image extension
 EXTENSION = ".png"
 #folder 
@@ -40,9 +43,6 @@ jsonworkers = 4
 
 # usually 4 is ok, but it you get Connection refused error, try less
 imageworkers = 1
-
-# switch to false if you want to continue from previously parsed txt file
-parse_json = True
 
 #########################################################
 
