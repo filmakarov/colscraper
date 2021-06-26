@@ -1,7 +1,0 @@
-# Ignore everything
-*
-
-# But not these files...
-!scraper_mt2.py
-!Readme.md
-# etc...
